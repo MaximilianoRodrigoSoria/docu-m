@@ -3,12 +3,12 @@ version: '3.8'
 services:
   docs:
     image: squidfunk/mkdocs-material:latest
-    container_name: mkdocks
+    container_name: msb_universal_co_docs
     ports:
       - "9005:9005"
     volumes:
       - ./:/docs
-    command: serve --dev-addr=0.0.0.0:9005 --config-file mkdocs.yml
+    command: serve --dev-addr=0.0.0.0:9005 --config-file /docs/mkdocs.yml
     networks:
       - docs_network
 

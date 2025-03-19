@@ -1,6 +1,6 @@
-site_name: API Spring Boot Documentation
-site_description: Documentación de la API REST con Spring Boot
-site_author: Tu Nombre
+site_name: Spring boot API Documentation
+site_description: Spring boot API Documentation
+site_author: Mi empresa
 
 # Configuración de directorios
 docs_dir: 'content'  # Los archivos markdown están en el directorio content
@@ -10,10 +10,22 @@ site_dir: 'site'  # La salida generada irá aquí
 theme:
   name: material
   palette:
-    # Usar solo el esquema claro
-    - scheme: default
-      primary: custom  # Permite personalizar el color primario en el CSS
-      accent: custom   # Permite personalizar el color de acento en el CSS
+    # Cambio de color principal a gris oscuro
+    primary:
+      - media: "(prefers-color-scheme)"
+        scheme: default
+        primary: grey
+        accent: indigo
+        toggle:
+          icon: material/brightness-auto
+          name: Switch to dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: grey
+        accent: indigo
+        toggle:
+          icon: material/brightness-4
+          name: Switch to light mode
   features:
     - navigation.tabs
     - navigation.sections
@@ -21,11 +33,9 @@ theme:
     - toc.integrate
     - search.suggest
     - search.highlight
-    - content.code.copy
-    - content.code.annotate
   language: es
   logo: assets/logo.png  # Ruta al logo
-  favicon: assets/favicon.png  # También usar el logo como favicon
+  favicon: assets/logo.png  # También usar el logo como favicon
 
 # Extensiones de Markdown
 markdown_extensions:
@@ -60,13 +70,13 @@ markdown_extensions:
 # Navegación
 nav:
   - Inicio: index.md
-  - Introducción: introduccion.md
   - Instalación y Configuración: instalacion-configuracion.md
   - Endpoints:
       - General: endpoints.md
   - Modelo de Datos: modelos-datos.md
-  - Manejo de Errores: manejo-errores.md
-  - Documentacion funcional: ejemplos-uso.md
+  - Documentación Funcional: documentacion-funcional.md
+  - Ejemplos de Uso: ejemplos-uso.md
+
 
 # Hojas de estilo adicionales
 extra_css:
@@ -82,14 +92,4 @@ plugins:
 dev_addr: 0.0.0.0:9005
 
 # Personalización del copyright
-copyright: Copyright &copy; 2025 - Tu Empresa
-
-# Redes sociales
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/tuorganizacion
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/tuorganizacion
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/company/tuorganizacion
+copyright: Copyright &copy; 2023 - 2025 Mi empresa

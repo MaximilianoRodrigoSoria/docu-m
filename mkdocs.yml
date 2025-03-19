@@ -1,0 +1,98 @@
+site_name: API Spring Boot Documentation
+site_description: Documentación de la API REST con Spring Boot
+site_author: Tu Nombre
+
+# Configuración de directorios
+docs_dir: 'content'  # Los archivos markdown están en el directorio content
+site_dir: 'site'  # La salida generada irá aquí
+
+# Tema y configuración
+theme:
+  name: material
+  palette:
+    # Cambio de color principal a gris oscuro
+    primary:
+      - media: "(prefers-color-scheme)"
+        scheme: default
+        primary: grey
+        accent: indigo
+        toggle:
+          icon: material/brightness-auto
+          name: Cambiar a modo oscuro
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: grey
+        accent: indigo
+        toggle:
+          icon: material/brightness-4
+          name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  language: es
+  logo: assets/logo.png  # Ruta al logo
+  favicon: assets/favicon.png  # También usar el logo como favicon
+
+# Extensiones de Markdown
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+# Navegación
+nav:
+  - Inicio: index.md
+  - Introducción: introduccion.md
+  - Primeros Pasos: primeros-pasos.md
+  - Instalación y Configuración: instalacion-configuracion.md
+  - Autenticación: autenticacion.md
+  - Endpoints:
+      - General: endpoints.md
+      - Usuarios: endpoints-usuarios.md
+      - Productos: endpoints-productos.md
+      - Pedidos: endpoints-pedidos.md
+  - Modelo de Datos: modelos-datos.md
+  - Códigos de Estado: codigos-estado.md
+  - Manejo de Errores: manejo-errores.md
+  - Ejemplos de Uso: ejemplos-uso.md
+  - Limitaciones y Cuotas: limitaciones-cuotas.md
+  - Seguridad: seguridad.md
+  - Guía de Migración: guia-migracion.md
+  - FAQ: faq.md
+  - Solución de Problemas: solucion-problemas.md
+  - Glosario: glosario.md
+  - Historial de Cambios: changelog.md
+
+# Hojas de estilo adicionales
+extra_css:
+  - css/extra.css
+
+# Otras configuraciones
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# Configuración de desarrollo
+dev_addr: 0.0.0.0:9005
+
+# Personalización del copyright
+copyright: Copyright &copy; 2025 - Tu Empresa

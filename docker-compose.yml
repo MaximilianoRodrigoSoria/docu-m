@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  docs:
+    image: squidfunk/mkdocs-material:latest
+    container_name: mkdocks
+    ports:
+      - "9005:9005"
+    volumes:
+      - ./:/docs
+    command: serve --dev-addr=0.0.0.0:9005 --config-file mkdocs.yml
+    networks:
+      - docs_network
+
+networks:
+  docs_network:
+    driver: bridge

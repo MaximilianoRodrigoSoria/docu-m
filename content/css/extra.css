@@ -1,0 +1,114 @@
+/* Estilos personalizados para la documentación del Conciliador Universal */
+
+/* Colores del tema corporativo */
+:root {
+    --md-primary-fg-color: #424242;            /* Gris oscuro para el encabezado */
+    --md-primary-fg-color--light: #616161;     /* Variante más clara del gris */
+    --md-primary-fg-color--dark: #212121;      /* Variante más oscura del gris */
+    --md-accent-fg-color: #3949ab;             /* Acento en azul índigo */
+}
+
+/* Estilo para el logo - AUMENTADO DE TAMAÑO */
+.md-header__button.md-logo {
+    padding: 0;
+    margin: 0.2rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    height: 2.4rem !important;  /* Aumentado significativamente */
+    width: auto;
+}
+
+/* También aumentamos el padding del header para dar más espacio al logo */
+.md-header__inner {
+    padding: 0.6rem 0.2rem;
+}
+
+/* Mejora visual para diagramas mermaid */
+.mermaid {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+th {
+    background-color: var(--md-primary-fg-color--light);
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.75rem;
+    border-top: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Mejoras para los bloques de código */
+code {
+    border-radius: 3px;
+    padding: 0.2rem 0.4rem;
+}
+
+pre {
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Estilos para los emojis */
+.twemoji {
+    vertical-align: middle;
+    margin-right: 0.2rem;
+}
+
+/* Mejora para los encabezados */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--md-primary-fg-color);
+}
+
+h1 {
+    border-bottom: 2px solid var(--md-primary-fg-color--light);
+    padding-bottom: 0.5rem;
+}
+
+/* Mejora para los blockquotes */
+blockquote {
+    border-left: 4px solid var(--md-accent-fg-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+}
+
+/* Estilos para los admonitions */
+.admonition {
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.admonition-title {
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+}
+
+.admonition-content {
+    padding: 0.75rem 1rem;
+}

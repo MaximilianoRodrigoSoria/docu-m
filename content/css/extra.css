@@ -234,3 +234,53 @@
 .md-search__icon {
     color: white;
 }
+
+/* Estilos para íconos Font Awesome */
+.emojione, .twemoji, .gemoji {
+    height: 1.125em;
+    width: 1.125em;
+    vertical-align: text-top;
+}
+
+/* Íconos personalizados por colores de la paleta */
+.icon-primary {
+    color: var(--zafiro-profundo);
+}
+
+.icon-accent {
+    color: var(--azul-neon);
+}
+
+.icon-neutral {
+    color: var(--gris-acero);
+}
+
+.icon-large {
+    font-size: 1.5em;
+}
+
+.icon-xl {
+    font-size: 2em;
+}
+
+/* Botones con íconos */
+.md-button .twemoji,
+.md-button .emojione {
+    vertical-align: middle;
+    margin-left: 0.3em;
+}
+
+/* Etiquetas de navegación con íconos */
+.md-tabs__link .twemoji,
+.md-tabs__link .emojione {
+    margin-right: 0.3em;
+}
+
+/* Títulos con íconos */
+h1 .twemoji, h1 .emojione,
+h2 .twemoji, h2 .emojione,
+h3 .twemoji, h3 .emojione,
+h4 .twemoji, h4 .emojione {
+    vertical-align: middle;
+    margin-right: 0.3em;
+}

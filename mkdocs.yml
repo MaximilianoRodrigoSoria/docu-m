@@ -61,25 +61,12 @@ markdown_extensions:
 nav:
   - Inicio: index.md
   - Introducción: introduccion.md
-  - Primeros Pasos: primeros-pasos.md
   - Instalación y Configuración: instalacion-configuracion.md
-  - Autenticación: autenticacion.md
   - Endpoints:
       - General: endpoints.md
-      - Usuarios: endpoints-usuarios.md
-      - Productos: endpoints-productos.md
-      - Pedidos: endpoints-pedidos.md
   - Modelo de Datos: modelos-datos.md
-  - Códigos de Estado: codigos-estado.md
   - Manejo de Errores: manejo-errores.md
-  - Ejemplos de Uso: ejemplos-uso.md
-  - Limitaciones y Cuotas: limitaciones-cuotas.md
-  - Seguridad: seguridad.md
-  - Guía de Migración: guia-migracion.md
-  - FAQ: faq.md
-  - Solución de Problemas: solucion-problemas.md
-  - Glosario: glosario.md
-  - Historial de Cambios: changelog.md
+  - Documentacion funcional: ejemplos-uso.md
 
 # Hojas de estilo adicionales
 extra_css:

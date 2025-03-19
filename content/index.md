@@ -1,14 +1,26 @@
-# API Spring Boot Documentation 
- 
-Bienvenido a la documentación de nuestra API REST desarrollada con Spring Boot. 
- 
-Esta documentación proporciona información detallada sobre cómo interactuar con los diferentes endpoints, 
-autenticación, modelos de datos y ejemplos de uso. 
- 
-## Contenido Principal 
- 
-* [Introducción](introduccion.md) 
-* [Primeros Pasos](primeros-pasos.md) 
-* [Endpoints](endpoints.md) 
-* [Modelos de Datos](modelos-datos.md) 
-* [Ejemplos de Uso](ejemplos-uso.md) 
+# Documentación API
+
+Bienvenido a la documentación oficial de nuestra API. Aquí encontrarás toda la información necesaria para integrar y utilizar nuestros servicios de manera efectiva.
+
+## Contenido
+
+* [Introducción](introduccion.md) - Visión general y conceptos básicos
+* [Instalación y Configuración](instalacion-configuracion.md) - Guía paso a paso para comenzar
+* [Endpoints](endpoints.md) - Documentación detallada de todos los endpoints disponibles
+* [Modelo de Datos](modelos-datos.md) - Estructura y esquemas de datos
+* [Manejo de Errores](manejo-errores.md) - Códigos de error y soluciones
+* [Ejemplos de Uso](ejemplos-uso.md) - Ejemplos prácticos de implementación
+
+## Características Principales
+
+- Autenticación OAuth 2.0
+- Respuestas en formato JSON
+- Rate limiting configurable
+- Documentación interactiva
+
+```mermaid
+graph LR
+    A[Cliente] --> B[Autenticación]
+    B --> C[Endpoints API]
+    C --> D[Respuesta JSON]
+    C --> E[Manejo de Errores]

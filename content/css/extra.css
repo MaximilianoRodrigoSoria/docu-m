@@ -1,14 +1,44 @@
-/* Estilos personalizados para la documentación del Conciliador Universal */
+/* Estilos personalizados para la documentación API Spring Boot */
 
-/* Colores del tema corporativo */
+/* Paleta de colores corporativa */
 :root {
-    --md-primary-fg-color: #424242;            /* Gris oscuro para el encabezado */
-    --md-primary-fg-color--light: #616161;     /* Variante más clara del gris */
-    --md-primary-fg-color--dark: #212121;      /* Variante más oscura del gris */
-    --md-accent-fg-color: #3949ab;             /* Acento en azul índigo */
+    --azul-neon: #0086C7;           /* Azul Neón #0086C7 */
+    --zafiro-profundo: #00498D;     /* Zafiro Profundo #00498D */
+    --gris-acero: #34475B;          /* Gris Acero #34475B */
+    --blanco-glacial: #D4E5F7;      /* Blanco Glacial #D4E5F7 */
+    
+    /* Color de fondo principal: Blanco */
+    --fondo-principal: #ffffff;
+    
+    /* Colores derivados para diferentes estados */
+    --azul-neon-claro: #4FAAE0;     /* Versión más clara del Azul Neón */
+    --azul-neon-muy-claro: #E8F4FB; /* Versión muy suave para fondos */
+    
+    /* Asignación de los colores de la paleta a las variables de Material */
+    --md-primary-fg-color: var(--zafiro-profundo);     /* Color principal para el encabezado - similar a la imagen */
+    --md-primary-fg-color--light: var(--azul-neon);    /* Variante más clara */
+    --md-primary-fg-color--dark: var(--zafiro-profundo); /* Variante más oscura */
+    --md-accent-fg-color: var(--azul-neon);            /* Acento en azul neón */
+    --md-typeset-a-color: var(--azul-neon);            /* Color de enlaces */
+    
+    /* Fondo principal blanco */
+    --md-default-bg-color: var(--fondo-principal);
 }
 
-/* Estilo para el logo - AUMENTADO DE TAMAÑO */
+/* Forzar modo claro para la documentación */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: var(--fondo-principal);
+    --md-default-fg-color: #333333;
+    --md-typeset-color: #333333;
+}
+
+/* Estilo para el header - mantener azul como en la imagen */
+.md-header, .md-tabs {
+    background-color: var(--zafiro-profundo);
+    color: white;
+}
+
+/* Asegurar que el logo se vea bien */
 .md-header__button.md-logo {
     padding: 0;
     margin: 0.2rem;
@@ -16,99 +46,191 @@
 
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-    height: 2.4rem !important;  /* Aumentado significativamente */
+    height: 2.4rem !important;
     width: auto;
 }
 
-/* También aumentamos el padding del header para dar más espacio al logo */
+/* Aumentamos el padding del header */
 .md-header__inner {
     padding: 0.6rem 0.2rem;
 }
 
+/* Navegación lateral - fondo blanco y detalles en la paleta */
+.md-nav {
+    background-color: var(--fondo-principal);
+    color: var(--gris-acero);
+}
+
+.md-nav__title {
+    color: var(--gris-acero);
+}
+
+.md-nav__item .md-nav__link--active {
+    color: var(--azul-neon);
+    font-weight: bold;
+}
+
+.md-nav__link:hover {
+    color: var(--azul-neon);
+}
+
+/* Contenido principal */
+.md-content {
+    background-color: var(--fondo-principal);
+    color: #333333;
+}
+
+/* Títulos */
+.md-typeset h1, .md-typeset h2, .md-typeset h3, 
+.md-typeset h4, .md-typeset h5, .md-typeset h6 {
+    color: var(--gris-acero);
+    font-weight: 600;
+}
+
+.md-typeset h1 {
+    border-bottom: 2px solid var(--azul-neon);
+    padding-bottom: 0.5rem;
+}
+
+.md-typeset h2 {
+    border-bottom: 1px solid var(--azul-neon-claro);
+    padding-bottom: 0.3rem;
+}
+
 /* Mejora visual para diagramas mermaid */
 .mermaid {
-    background-color: #f8f9fa;
+    background-color: var(--blanco-glacial);
     padding: 1rem;
     border-radius: 4px;
     margin: 1.5rem 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Estilos para tablas */
-table {
+.md-typeset table:not([class]) {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-th {
-    background-color: var(--md-primary-fg-color--light);
+.md-typeset table:not([class]) th {
+    background-color: var(--zafiro-profundo);
     color: white;
     padding: 0.75rem;
     text-align: left;
 }
 
-td {
+.md-typeset table:not([class]) td {
     padding: 0.75rem;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #eaecef;
 }
 
-tr:nth-child(even) {
-    background-color: #f5f5f5;
+.md-typeset table:not([class]) tr:nth-child(even) {
+    background-color: var(--blanco-glacial);
 }
 
-/* Mejoras para los bloques de código */
-code {
+/* Bloques de código */
+.md-typeset code {
     border-radius: 3px;
     padding: 0.2rem 0.4rem;
+    background-color: var(--blanco-glacial);
+    color: var(--gris-acero);
 }
 
-pre {
+.md-typeset pre > code {
+    background-color: #f6f8fa; /* Fondo claro para bloques de código */
+}
+
+.md-typeset pre {
     padding: 1rem;
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--azul-neon);
+    background-color: #f6f8fa;
 }
 
-/* Estilos para los emojis */
-.twemoji {
-    vertical-align: middle;
-    margin-right: 0.2rem;
-}
-
-/* Mejora para los encabezados */
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: var(--md-primary-fg-color);
-}
-
-h1 {
-    border-bottom: 2px solid var(--md-primary-fg-color--light);
-    padding-bottom: 0.5rem;
-}
-
-/* Mejora para los blockquotes */
-blockquote {
-    border-left: 4px solid var(--md-accent-fg-color);
+/* Blockquotes */
+.md-typeset blockquote {
+    border-left: 4px solid var(--azul-neon);
     padding-left: 1rem;
     margin-left: 0;
-    font-style: italic;
+    background-color: var(--blanco-glacial);
+    border-radius: 0 4px 4px 0;
 }
 
-/* Estilos para los admonitions */
-.admonition {
+/* Admonitions (bloques de notas, advertencias, etc.) */
+.md-typeset .admonition {
     margin: 1.5rem 0;
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--azul-neon);
+    background-color: var(--fondo-principal);
 }
 
-.admonition-title {
+.md-typeset .admonition-title {
     font-weight: 600;
     padding: 0.75rem 1rem;
+    background-color: var(--blanco-glacial);
 }
 
-.admonition-content {
+.md-typeset .admonition-content {
     padding: 0.75rem 1rem;
+}
+
+/* Personalización por tipo de admonition */
+.md-typeset .admonition.note {
+    border-left-color: var(--azul-neon);
+}
+
+.md-typeset .admonition.warning {
+    border-left-color: #ff9100; /* Naranja para advertencias */
+}
+
+.md-typeset .admonition.danger {
+    border-left-color: #e53935; /* Rojo para peligro */
+}
+
+.md-typeset .admonition.tip {
+    border-left-color: #43a047; /* Verde para consejos */
+}
+
+/* Pie de página */
+.md-footer {
+    background-color: var(--gris-acero);
+}
+
+.md-footer-meta {
+    background-color: var(--gris-acero);
+}
+
+/* Botones personalizados */
+.md-typeset .md-button {
+    background-color: var(--zafiro-profundo);
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.md-typeset .md-button:hover {
+    background-color: var(--azul-neon);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Ajustes para asegurar que el tema de las notas sea coherente */
+.md-typeset mark {
+    background-color: var(--azul-neon-muy-claro);
+    color: var(--gris-acero);
+}
+
+/* Ajustes para la barra de búsqueda */
+.md-search__input {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.md-search__icon {
+    color: white;
 }

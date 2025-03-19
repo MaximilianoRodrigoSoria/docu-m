@@ -10,22 +10,10 @@ site_dir: 'site'  # La salida generada irá aquí
 theme:
   name: material
   palette:
-    # Cambio de color principal a gris oscuro
-    primary:
-      - media: "(prefers-color-scheme)"
-        scheme: default
-        primary: grey
-        accent: indigo
-        toggle:
-          icon: material/brightness-auto
-          name: Cambiar a modo oscuro
-      - media: "(prefers-color-scheme: dark)"
-        scheme: slate
-        primary: grey
-        accent: indigo
-        toggle:
-          icon: material/brightness-4
-          name: Cambiar a modo claro
+    # Usar solo el esquema claro
+    - scheme: default
+      primary: custom  # Permite personalizar el color primario en el CSS
+      accent: custom   # Permite personalizar el color de acento en el CSS
   features:
     - navigation.tabs
     - navigation.sections
@@ -33,6 +21,8 @@ theme:
     - toc.integrate
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - content.code.annotate
   language: es
   logo: assets/logo.png  # Ruta al logo
   favicon: assets/favicon.png  # También usar el logo como favicon
@@ -40,22 +30,29 @@ theme:
 # Extensiones de Markdown
 markdown_extensions:
   - admonition
-  - codehilite
+  - codehilite:
+      guess_lang: false
   - footnotes
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.details
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - toc:
       permalink: true
+      toc_depth: 3
 
 # Navegación
 nav:
@@ -96,3 +93,13 @@ dev_addr: 0.0.0.0:9005
 
 # Personalización del copyright
 copyright: Copyright &copy; 2025 - Tu Empresa
+
+# Redes sociales
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tuorganizacion
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/tuorganizacion
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/tuorganizacion
